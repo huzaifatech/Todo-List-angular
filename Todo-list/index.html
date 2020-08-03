@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="mod" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" ,initial-scale="1.0">
+    <title>Angular TODO List</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+    <script src="script.js"></script>
+
+</head>
+
+    <body ng-controller="ctr">
+        <div class="container">
+            <h1>ToDo List</h1>
+            <ul ng-repeat="l in list">
+                <li>
+                    {{ l }}
+                    <span ng-click="delete($index)">&times;</span>
+                </li>
+                <hr>
+            </ul>
+            <form>
+                <input type="text" ng-model="new" placeholder="New Task">
+                <input type="button" ng-click="add()" value="Add">
+            </form>
+        </div>
+    </body>
+
+</html>
